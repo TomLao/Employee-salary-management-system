@@ -33,7 +33,7 @@
     <ClCompile Include="Statistics.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Sort.c">
+    <ClCompile Include="Sort未完成.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

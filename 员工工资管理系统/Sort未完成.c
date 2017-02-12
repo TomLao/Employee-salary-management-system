@@ -21,7 +21,7 @@ void SortAllSalary()//按工资排序所有人（链表排序）
 	}
 }
 
-void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！！
+void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
 {
 	NODE *p=head;
 	while (p != NULL) {

@@ -44,8 +44,6 @@ void AddData_Menu()
 	int postSelect, n, count=0;
 	NODE *p2=NULL;
 
-//	openFILe();//读取文件
-
 	printf("输入职工总人数：");
 	scanf("%d", &n);
 
@@ -72,8 +70,6 @@ void ChangeData_Menu()	//修改数据菜单
 {
 	int nSelect;
 
-	readFILe();//打开文件并读入至链表
-
 	printf("\n1.修改员工信息 2.计算所有员工当月工资 3.销售总额\n");
 	printf("请选择要进行修改的操作：");
 	scanf("%d", &nSelect);
@@ -91,8 +87,6 @@ void FindData_Menu()
 {
 	int nSelect;
 
-	readFILe();//打开文件并读入至链表
-
 	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 	printf("1.分页显示全部员工信息  2.按部门显示本部门全员工信息\n\n");
 	printf("3.分别显示4种岗位员工信息  4.根据工号或姓名查询信息\n");
@@ -106,7 +100,7 @@ void FindData_Menu()
 		break;
 	case 3:Post_printData();//计算并输出销售总额
 		break;
-	case 4:NumberORName_printData();
+	case 4:Number_Name_printData();
 		break;
 	}
 }
@@ -114,8 +108,6 @@ void FindData_Menu()
 void SortSalary_Menu()
 {
 	int nSelect, a;
-
-	readFILe();//打开文件并读入至链表
 
 	printf("\n━━━━━━━━━━━━━━━\n");
 	printf("1.所有员工按当月工资从高到低排序\n\n");

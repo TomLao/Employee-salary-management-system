@@ -2,7 +2,7 @@
 #include"global.h"
 
 
-NODE *AddData(int postSelect,NODE *p2,int i) {	//添加链表结点模块
+NODE *AddData(int postSelect, NODE *p2, int i) {	//添加链表结点模块
 
 	NODE *p1;
 	if ((p1 = (NODE*)malloc(sizeof(NODE))) == NULL) {
@@ -12,19 +12,20 @@ NODE *AddData(int postSelect,NODE *p2,int i) {	//添加链表结点模块
 	p1->next = NULL;
 	if (postSelect == manager || postSelect == salemanager) {
 		p1->post = postSelect;
-		printf("职工号 姓名 性别 部门 年龄\n");
-		scanf("%d%s%s%s%d", &p1->number, p1->name, p1->sex, p1->BuMeng, &p1->age);
+		printf("姓名 性别 部门 年龄\n");
+		scanf("%s%s%s%d", p1->name, p1->sex, p1->BuMeng, &p1->age);
 	}
 	if (postSelect == technician) {
 		p1->post = postSelect;
-		printf("职工号 姓名 性别 部门 年龄 当月工作时间\n");
-		scanf("%d%s%s%s%d%d", &p1->number, &p1->name, &p1->sex, &p1->BuMeng, &p1->age, &p1->workTime);
+		printf("姓名 性别 部门 年龄 当月工作时间\n");
+		scanf("%s%s%s%d%d", &p1->name, &p1->sex, &p1->BuMeng, &p1->age, &p1->workTime);
 	}
 	if (postSelect == salesman) {
 		p1->post = postSelect;
-		printf("职工号 姓名 性别 部门 年龄 当月销售额\n");
-		scanf("%d%s%s%s%d%d", &p1->number, &p1->name, &p1->sex, &p1->BuMeng, &p1->age, &p1->salenum);
+		printf("姓名 性别 部门 年龄 当月销售额\n");
+		scanf("%s%s%s%d%d", &p1->name, &p1->sex, &p1->BuMeng, &p1->age, &p1->salenum);
 	}
+	p1->number = i;
 
 	if (i == 1)
 		head = p1;
@@ -57,7 +58,7 @@ void calculate()
 
 void ChangeData()	//修改数据
 {
-	int num, nSelect=-1;
+	int num, nSelect = -1;
 	NODE *p;
 	printf("\n请输入要修改信息的职工号:");
 	scanf("%d", &num);
@@ -81,11 +82,11 @@ void ChangeData()	//修改数据
 			case 1:scanf("%s", p->name); break;
 			case 2:scanf("%s", p->sex); break;
 			case 3:scanf("%s", p->BuMeng); break;
-			case 4:scanf("%s", p->post); break;
-			case 5:scanf("%s", p->age); break;
-			case 6:scanf("%s", p->salary); break;
-			case 7:scanf("%s", p->workTime); break;
-			case 8:scanf("%s", p->salenum); break;
+			case 4:scanf("%d", &p->post); break;
+			case 5:scanf("%d", &p->age); break;
+			case 6:scanf("%d", &p->salary); break;
+			case 7:scanf("%d", &p->workTime); break;
+			case 8:scanf("%d", &p->salenum); break;
 			default:printf("输入错误，请重新输入！\n"); break;
 			}
 		}
@@ -135,7 +136,7 @@ void DeleteNode()
 {
 	int num;
 	NODE *p1, *p2;
-	readFILe();//打开文件并写入链表
+
 	printf("\n-----------------------\n");
 	printf("请输入要删除员工的职工号：");
 	scanf("%d", &num);

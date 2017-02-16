@@ -13,6 +13,8 @@ void main()
 	printWelcome();				//输出欢迎界面
 	int nSelect = -1;
 
+	readFILe();//打开文件并读入至链表
+
 	while (nSelect != 0) {
 		nSelect = printMainMenu();
 	}

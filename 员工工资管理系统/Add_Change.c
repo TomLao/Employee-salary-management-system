@@ -39,7 +39,7 @@ NODE *AddData(int postSelect, NODE *p2, int i)	//添加链表结点模块
 void calculate()
 {
 	int sum;
-	NODE *p=head;
+	NODE *p = head;
 	
 	while (p != NULL) {
 		if (p->post == manager)
@@ -123,7 +123,7 @@ int CountSalary()	//计算所有员工当月工资
 NODE * FindNode(int num) {	//查找结点位置并返回
 	NODE*p;
 
-	p = head;
+	p = head->next;
 	while ((p->number != num) && (p->next != NULL))
 		p = p->next;
 	if (p->number != num)

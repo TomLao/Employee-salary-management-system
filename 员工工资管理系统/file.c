@@ -29,7 +29,7 @@ void readFILe()
 
 	FILE*fp;
 
-	if ((fp = fopen("salary.txt", "rb")) == NULL) {
+	if ((fp = fopen("salary.txt", "r")) == NULL) {
 		printf("\n不能打开文件！\n");
 		exit(0);
 	}

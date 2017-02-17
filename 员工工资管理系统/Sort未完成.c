@@ -3,12 +3,26 @@
 
 void SortAllSalary()//按工资排序所有人（链表排序）
 {
-	NODE *p, *s, *pt;
-	p = head;
+	NODE *p, *pp, *s, *pt;
+
+	
+	if ((p = (NODE*)malloc(sizeof(NODE))) == NULL) {
+		printf("不能成功分配存储块！\n");
+		exit(0);
+	}
+	if ((pp = (NODE*)malloc(sizeof(NODE))) == NULL) {
+		printf("不能成功分配存储块！\n");
+		exit(0);
+	}
+
+	p->next = head;	//这里要解决头指针不参与排序问题，用再申请位于头指针前的新结点2个
+					//一个(p)用于动排序，一个(pp)用于储存位置恢复头指针
+	pp = p;
 	s = p->next;
+	//s = p;
 	while (p->next != NULL) {
 		while (s->next != NULL) {
-			if (p->next->salary > s->next->salary) {
+			if (p->next->salary < s->next->salary) {
 				pt = p->next;
 				p->next = s->next;
 				s->next = p->next->next;
@@ -19,6 +33,8 @@ void SortAllSalary()//按工资排序所有人（链表排序）
 		p = p->next;
 		s = p->next;
 	}
+
+	head = pp->next;	//恢复头指针
 }
 
 void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
@@ -78,7 +94,7 @@ void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
 
 void printLinkTable()
 {
-	NODE *p1 = head->next;
+	NODE *p1 = head;
 	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
 	while (p1 != NULL) {	//搜索模块

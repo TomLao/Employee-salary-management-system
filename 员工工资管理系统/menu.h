@@ -40,3 +40,6 @@ void SortSalary_Menu();
 void SortAllSalary();
 void SortPostSalary();
 void printLinkTable();
+
+
+int PrintData(NODE *p1);

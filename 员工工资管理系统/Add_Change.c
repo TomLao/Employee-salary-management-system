@@ -2,8 +2,8 @@
 #include"global.h"
 
 
-NODE *AddData(int postSelect, NODE *p2, int i) {	//添加链表结点模块
-
+NODE *AddData(int postSelect, NODE *p2, int i)	//添加链表结点模块
+{
 	NODE *p1;
 	if ((p1 = (NODE*)malloc(sizeof(NODE))) == NULL) {
 		printf("不能成功分配存储块！\n");

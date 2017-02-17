@@ -13,8 +13,8 @@ void All_printData()//分页显示全部员工信息
 			getch();
 		}
 	}
-
 }
+
 void BuMeng_printData()//按部门显示本部门全部员工信息
 {
 	NODE *p1 = head;
@@ -30,6 +30,7 @@ void BuMeng_printData()//按部门显示本部门全部员工信息
 		p1 = p1->next;
 	}
 }
+
 void Post_printData()//分别显示4种岗位的员工信息
 {
 	NODE *p1 = head;
@@ -46,6 +47,7 @@ void Post_printData()//分别显示4种岗位的员工信息
 		p1 = p1->next;
 	}
 }
+
 void Number_Name_printData()//根据工号或者姓名查询员工信息
 {
 	NODE *p1 = head;

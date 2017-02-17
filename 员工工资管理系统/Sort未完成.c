@@ -64,7 +64,7 @@ void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
 	printLinkTable();
 }
 
-void printLinkTable()//输出排序猴的链表
+/*void printLinkTable()//输出排序猴的链表
 {
 	NODE *p1;
 	p1 = head->next;
@@ -74,4 +74,17 @@ void printLinkTable()//输出排序猴的链表
 		//printf("%d %s\n", p->number, p->name);
 		p1 = p1->next;
 	}
+}*/
+
+void printLinkTable()
+{
+	NODE *p1 = head->next;
+	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	while (p1 != NULL) {	//搜索模块
+		PrintData(p1);//调用数据输出模块
+		p1 = p1->next;
+	}
+
+	return p1;
 }

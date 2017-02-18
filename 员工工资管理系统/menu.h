@@ -40,6 +40,14 @@ void SortSalary_Menu();
 void SortAllSalary();
 void SortPostSalary();
 void printLinkTable();
+void Print_Form();
+
+void Statistic_Menu();
+int Average(NODE *p);
+void BuMen_Ave_Low_High();
+void BuMen_MoreThenAve();
+void All_Lowest_Highest();
+int BM_Average(char BM[20]);
 
 
 int PrintData(NODE *p1);

@@ -21,8 +21,9 @@ void BuMeng_printData()//按部门显示本部门全部员工信息
 	char Find_BuMeng[20];
 	printf("请输入要查询的部门：");
 	scanf("%s", Find_BuMeng);
-	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
-	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+
+	Print_Form();
+
 	while (p1 != NULL) {
 		if (strcmp(p1->BuMeng, Find_BuMeng) == 0) {
 			PrintData(p1);//调用数据输出模块
@@ -38,8 +39,9 @@ void Post_printData()//分别显示4种岗位的员工信息
 
 	printf("\n请输入要查询的岗位(1:经理，2:技术员，3:销售员，4:销售经理)");
 	scanf("%d", &Find_post);
-	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
-	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+
+	Print_Form();
+
 	while (p1 != NULL) {
 		if (Find_post == p1->post) {
 			PrintData(p1);//调用数据输出模块
@@ -65,8 +67,8 @@ void Number_Name_printData()//根据工号或者姓名查询员工信息
 		scanf("%s", Find_name);
 	}
 
-	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
-	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	Print_Form();
+
 	while (p1 != NULL) {	//搜索模块
 		if ((Find_number == p1->number) || (strcmp(Find_name, p1->name) == 0)) {
 			PrintData(p1);//调用数据输出模块
@@ -77,8 +79,8 @@ void Number_Name_printData()//根据工号或者姓名查询员工信息
 
 int Print_10_Data(NODE *p1)
 {
-	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
-	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	Print_Form();
+
 	for (int i = 1; i <= 10 && p1 != NULL; i++) {
 		PrintData(p1);//调用数据输出模块
 		p1 = p1->next;
@@ -95,6 +97,12 @@ int PrintData(NODE *p1)
 	else if (p1->post == technician)
 		printf("\n%d       %s    %s    %s    %d    %d    %d     %d\n", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post, p1->age, p1->salary, p1->workTime);
 	else
-		printf("\n%d       %s    %s    %s    %d    %d    %d     %d\n", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post, p1->age, p1->salary, p1->salenum);
+		printf("\n%d       %s    %s    %s    %d    %d    %d                      %d\n", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post, p1->age, p1->salary, p1->salenum);
 
+}
+
+void Print_Form()
+{
+	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
 }

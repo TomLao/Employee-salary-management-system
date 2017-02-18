@@ -37,7 +37,7 @@ void SortAllSalary()//按工资排序所有人（链表排序）
 	head = pp->next;	//恢复头指针
 }
 
-void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
+/*void SortPostSalary1()//按岗位工资排序post		//未完成！！！！！！！！！！！！
 {
 	NODE *p=head;
 	while (p != NULL) {
@@ -78,7 +78,7 @@ void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
 	}
 	printf("销售经理工资排序:\n");
 	printLinkTable();
-}
+}*/
 
 /*void printLinkTable()//输出排序猴的链表
 {
@@ -92,15 +92,59 @@ void SortPostSalary()//按岗位工资排序post		//未完成！！！！！！！！！！！！
 	}
 }*/
 
+void SortPostSalary()
+{
+	SortAllSalary();
+	NODE *p1, *p2, *p3, *p4;
+	p1 = p2 = p3 = p4 = head;
+
+	printf("\n━━━━━━━━━━━经理工资排序━━━━━━━━━━━━━━\n");
+	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	while (p1 != NULL) {
+		if (p1->post == manager) {
+			PrintData(p1);
+		}
+		p1 = p1->next;
+	}
+
+	printf("\n\n━━━━━━━━━━━技术员工资排序━━━━━━━━━━━━━\n");
+	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	while (p2 != NULL) {
+		if (p2->post == technician) {
+			PrintData(p2);
+		}
+		p2 = p2->next;
+	}
+
+	printf("\n\n━━━━━━━━━━━销售员工资排序━━━━━━━━━━━━━\n");
+	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	while (p3 != NULL) {
+		if (p3->post == salesman) {
+			PrintData(p3);
+		}
+		p3 = p3->next;
+	}
+
+	printf("\n\n━━━━━━━━━━销售经理工资排序━━━━━━━━━━━━━\n");
+	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+	while (p4 != NULL) {
+		if (p4->post == salemanager) {
+			PrintData(p4);
+		}
+		p4 = p4->next;
+	}
+}
+
 void printLinkTable()
 {
 	NODE *p1 = head;
-	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
-	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+
+	Print_Form();
+
 	while (p1 != NULL) {	//搜索模块
 		PrintData(p1);//调用数据输出模块
 		p1 = p1->next;
 	}
 
-	return p1;
+	//return p1;
 }

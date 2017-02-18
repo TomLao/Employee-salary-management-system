@@ -147,7 +147,7 @@
     <ClCompile Include="FindData.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
-    <ClCompile Include="Sort未完成.c" />
+    <ClCompile Include="Sort.c" />
     <ClCompile Include="Statistics.c" />
   </ItemGroup>
   <ItemGroup>

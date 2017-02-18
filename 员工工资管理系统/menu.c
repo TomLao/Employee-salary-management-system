@@ -33,6 +33,7 @@ int printMainMenu() {
 		SortSalary_Menu();
 		break;
 	case 6:printf("统计数据\n");
+		Statistic_Menu();
 		break;
 	}
 
@@ -121,6 +122,30 @@ void SortSalary_Menu()
 		break;
 	case 2:
 		SortPostSalary();
+		break;
+	}
+}
+
+void Statistic_Menu()
+{
+	int nSelect;
+
+	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+	printf("1.统计并显示某个部门的平均工资、最低工资、最高工资\n");
+	printf("2.统计并显示某个部门超出平均工资的人数与员工信息\n");
+	printf("3.统计并显示所有员工中的最低工资和最高工资员工的信息\n");
+	printf("4.统计并显示所有员工超出平均工资的人数与员工信息\n");
+	printf("━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+	scanf("%d", &nSelect);
+
+	switch (nSelect) {
+	case 1:BuMen_Ave_Low_High();
+		break;
+	case 2:BuMen_MoreThenAve();//计算并输出所有员工当月工资
+		break;
+	case 3:All_Lowest_Highest();//计算并输出销售总额
+		break;
+	case 4:All_MoreThenAve();
 		break;
 	}
 }

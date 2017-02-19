@@ -1,7 +1,6 @@
 #include"menu.h"
 #include"global.h"
 
-
 NODE *AddData(int postSelect, NODE *p2, int i)	//添加链表结点模块
 {
 	NODE *p1;
@@ -53,7 +52,6 @@ void calculate()
 
 		p = p->next;
 	}
-
 }
 
 void ChangeData()	//修改数据
@@ -91,7 +89,6 @@ void ChangeData()	//修改数据
 			}
 		}
 	}
-
 }
 
 int total_salenum()//计算销售员的销售总额
@@ -141,7 +138,6 @@ void DeleteNode()
 	printf("请输入要删除员工的职工号：");
 	scanf("%d", &num);
 
-	//p1 = p2 = FindNode(num);	//查找结点位置
 	p1 = p2 = head;
 	while ((p1->number != num) && (p1->next != NULL)) {
 		p2 = p1;

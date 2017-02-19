@@ -54,6 +54,7 @@ void BuMen_MoreThenAve()	//2.统计并显示某个部门超出平均工资的人数与员工信息
 		printf("\n%s 部门共有以上 %d 名员工高于平均工资\n", Find_Bumen, count);
 	}
 }
+
 void All_Lowest_Highest()	//3.统计并显示所有员工中的最低工资和最高工资员工的信息
 {
 	NODE *p,*pH, *pL;
@@ -90,13 +91,11 @@ void All_MoreThenAve()	//4.统计并显示所有员工超出平均工资的人数与员工信息
 		p = p->next;
 		count++;
 	}
-
 	printf("共有以上 %d 名员工高于平均工资\n", count);
 }
 
 int Average(NODE *p)
 {
-	//NODE *p = head;
 	int count, sum;
 	count = sum = 0;
 
@@ -106,7 +105,6 @@ int Average(NODE *p)
 		p = p->next;
 	}
 	return sum / count;
-	//printf("%d", sum / count);
 }
 
 int BM_Average(char BM[20])

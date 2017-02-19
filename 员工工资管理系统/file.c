@@ -14,8 +14,6 @@ void writeFile() {
 	p1 = head;
 	while (p1 != NULL) {
 		fwrite(p1, sizeof(NODE), 1, fp);
-		//fprintf(fp, "%d%s%s%s%d%d%d%d%d%d", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post,
-			//p1->age, p1->salary, p1->workTime, p1->salenum, p1->next);
 		p1 = p1->next;
 	}
 	fclose(fp);
@@ -52,12 +50,4 @@ void readFILe()
 		}
 	}
 	fclose(fp);
-
-	/*p1 = head;
-	while (p1 != NULL) {
-		printf("\n");
-		printf("%d %s %s %s %d %d %d %d %d %d\n", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post,
-			p1->age, p1->salary, p1->workTime, p1->salenum, p1->next);
-		p1 = p1->next;
-	}*/
 }

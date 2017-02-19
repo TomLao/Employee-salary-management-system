@@ -83,8 +83,8 @@ void ChangeData_Menu()	//修改数据菜单
 		break;
 	}
 }
-		//待完成，功能4
-void FindData_Menu()
+		
+void FindData_Menu()	//查询数据
 {
 	int nSelect;
 
@@ -106,7 +106,7 @@ void FindData_Menu()
 	}
 }
 
-void SortSalary_Menu()
+void SortSalary_Menu()	//工资排序
 {
 	int nSelect, a;
 

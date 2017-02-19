@@ -1,6 +1,7 @@
 #include"menu.h"
 #include"global.h"
 #include<string.h>
+
 void All_printData()//分页显示全部员工信息
 {
 	NODE *p1 = head;
@@ -9,15 +10,6 @@ void All_printData()//分页显示全部员工信息
 	dhead = Creat_DoubleLink();
 	dp_First = dp_Last = dp = dhead;	//dp_First固定首个
 									//dp_Last固定尾个，dp机动
-	/*while (p1 != NULL) {
-		p1 = Print_10_Data(p1);
-		if (p1 == NULL)
-			break;
-		else {
-			printf("按任意键显示下一页");
-			getch();
-		}
-	}*/
 
 	while (dp_Last->next != NULL)	//将dp_Last置于尾个
 		dp_Last = dp_Last->next;
@@ -48,9 +40,6 @@ void All_printData()//分页显示全部员工信息
 		case 4:Print_10_Data(dp_Last->point);
 		}
 	} while (n != 0);
-
-
-
 }
 
 void BuMeng_printData()//按部门显示本部门全部员工信息
@@ -125,7 +114,6 @@ int Print_10_Data(NODE *p1)
 	}
 	
 	return p1;
-
 }
 
 int PrintData(NODE *p1)
@@ -136,7 +124,6 @@ int PrintData(NODE *p1)
 		printf("\n%d       %s    %s    %s    %d    %d    %d     %d\n", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post, p1->age, p1->salary, p1->workTime);
 	else
 		printf("\n%d       %s    %s    %s    %d    %d    %d                      %d\n", p1->number, p1->name, p1->sex, p1->BuMeng, p1->post, p1->age, p1->salary, p1->salenum);
-
 }
 
 void Print_Form()

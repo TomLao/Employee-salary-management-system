@@ -97,9 +97,9 @@ void FindData_Menu()
 	switch (nSelect) {
 	case 1:All_printData();
 		break;
-	case 2:BuMeng_printData();//计算并输出所有员工当月工资
+	case 2:BuMeng_printData();//按部门显示本部门全员工信息
 		break;
-	case 3:Post_printData();//计算并输出销售总额
+	case 3:Post_printData();//分别显示4种岗位员工信息
 		break;
 	case 4:Number_Name_printData();
 		break;
@@ -141,9 +141,9 @@ void Statistic_Menu()
 	switch (nSelect) {
 	case 1:BuMen_Ave_Low_High();
 		break;
-	case 2:BuMen_MoreThenAve();//计算并输出所有员工当月工资
+	case 2:BuMen_MoreThenAve();
 		break;
-	case 3:All_Lowest_Highest();//计算并输出销售总额
+	case 3:All_Lowest_Highest();
 		break;
 	case 4:All_MoreThenAve();
 		break;

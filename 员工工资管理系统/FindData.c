@@ -4,15 +4,53 @@
 void All_printData()//分页显示全部员工信息
 {
 	NODE *p1 = head;
-	while (p1 != NULL) {
-		p1=Print_10_Data(p1);
+	DNODE *dp, *dp_First, *dp_Last, *dhead;
+	int n;
+	dhead = Creat_DoubleLink();
+	dp_First = dp_Last = dp = dhead;	//dp_First固定首个
+									//dp_Last固定尾个，dp机动
+	/*while (p1 != NULL) {
+		p1 = Print_10_Data(p1);
 		if (p1 == NULL)
 			break;
 		else {
 			printf("按任意键显示下一页");
 			getch();
 		}
-	}
+	}*/
+
+	while (dp_Last->next != NULL)	//将dp_Last置于尾个
+		dp_Last = dp_Last->next;
+
+	do {
+		printf("\n━━━━━━━输入要进行的操作━━━━━━━\n");
+		printf("1.首页 2.上一页 3.下一页 4.最后一页 0.退出\n");
+		scanf("%d", &n);
+
+		switch (n) {
+		case 1:Print_10_Data(dp_First->point); break;
+		case 2: {
+			if (dp->front == NULL)
+				printf("已是首页！");
+			else {
+				Print_10_Data(dp->front->point);
+				dp = dp->front;
+			}
+		}break;
+		case 3: {
+			if (dp->next == NULL)
+				printf("已是尾页！");
+			else {
+				Print_10_Data(dp->next->point);
+				dp = dp->next;
+			}
+		}break;
+		case 4:Print_10_Data(dp_Last->point);
+		}
+	} while (n != 0);
+
+
+
 }
 
 void BuMeng_printData()//按部门显示本部门全部员工信息
@@ -105,4 +143,36 @@ void Print_Form()
 {
 	printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 	printf("职工号 姓名 性别 部门 岗位 年龄 当月工资 当月工作时间 当月销售额");
+}
+
+//一下为双向链表实验
+DNODE *Creat_DoubleLink()	//添加链表结点模块
+{
+	NODE *p = head;
+	DNODE *dhead = NULL, *dp1, *dp2;
+	int count = 1;
+
+	while (p != NULL) {
+		if (count % 10 == 1) {
+			if ((dp1 = (DNODE*)malloc(sizeof(DNODE))) == NULL) {
+				printf("不能成功分配存储块！\n");
+				exit(0);
+			}
+			dp1->point = p;
+			dp1->next = NULL;
+
+			if (count == 1) {
+				dp1->front = NULL;
+				dhead = dp1;
+			}
+			else {
+				dp2->next = dp1;
+				dp1->front = dp2;
+			}
+			dp2 = dp1;
+		}
+		count++;
+		p = p->next;
+	}
+	return dhead;
 }

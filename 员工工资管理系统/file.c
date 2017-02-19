@@ -6,7 +6,7 @@ void writeFile() {
 	NODE*p1, *p2;
 	FILE*fp;
 
-	if ((fp = fopen("salary.txt", "wb")) == NULL) {
+	if ((fp = fopen("salary.txt", "w")) == NULL) {
 		printf("\n不能打开文件！\n");
 		exit(0);
 	}

@@ -16,6 +16,14 @@ typedef struct Node {
 	struct Node *next;
 }NODE;
 
+typedef struct DNode {
+	struct Node *point;
+	struct DNode *front;
+	struct DNode *next;
+}DNODE;
+
+
+
 void printWelcome();
 int printMainMenu();
 void AddData_Menu();
@@ -51,3 +59,6 @@ int BM_Average(char BM[20]);
 
 
 int PrintData(NODE *p1);
+
+
+DNODE *Creat_DoubleLink();
